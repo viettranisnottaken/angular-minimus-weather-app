@@ -8,9 +8,8 @@ describe('CredentialComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CredentialComponent ]
-    })
-    .compileComponents();
+      declarations: [CredentialComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

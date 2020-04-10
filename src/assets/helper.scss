@@ -1,2 +1,28 @@
 .btn {
+  &--invisible {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.d-flex {
+  display: flex;
+
+  &--align-items {
+    &--center {
+      align-items: center;
+    }
+  }
+
+  &--justify-content {
+    &--space-between {
+      justify-content: space-between;
+    }
+  }
+}
+
+.m-1 {
+  margin: 10px;
 }

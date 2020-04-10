@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  position: relative;
+
+  .hamburger {
+    padding: 0;
+  }
+
+  .brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__name {
+      display: inline-block;
+      margin: 0;
+    }
+
+    &__logo {
+      padding: 10px;
+    }
+  }
+
+  .day {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@import './theme-switch.scss';

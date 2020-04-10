@@ -1,1 +1,48 @@
-<p>navbar works!</p>
+<nav class="nav">
+  <div class="d-flex dflex--align-items--center">
+    <button class="hamburger btn btn--invisible">
+      <svg class="" width="25" height="25">
+        <rect x="0" y="5" width="20px" height="2px"></rect>
+        <rect x="0" y="12" width="20px" height="2px"></rect>
+        <rect x="0" y="19" width="20px" height="2px"></rect>
+      </svg>
+    </button>
+    <div class="brand">
+      <svg class="brand__logo" width="32" height="32">
+        <polygon
+          points="0,0 32,32 0,32"
+          style="fill: #00ff9b; stroke: black; stroke-width: 0;"
+        />
+        <polygon
+          points="32,0 32,32 0,32"
+          style="fill: #003eff; stroke: black; stroke-width: 0;"
+        />
+      </svg>
+      <h1 class="brand__name">{{ brandName | titlecase }}</h1>
+    </div>
+  </div>
+
+  <div>
+    <div class="day">
+      <h1>{{ day | uppercase }}</h1>
+    </div>
+  </div>
+
+  <div>
+    <div class="theme-switch">
+      <small class="m-1">LIGHT</small>
+      <span class="m-1">
+        <label class="theme-switch__switch" for="toggle">
+          <input
+            type="checkbox"
+            name=""
+            class="theme-switch__checkbox"
+            id="toggle"
+          />
+          <span class="theme-switch__slider"></span>
+        </label>
+      </span>
+      <small class="m-1">DARK</small>
+    </div>
+  </div>
+</nav>

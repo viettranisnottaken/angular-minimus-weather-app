@@ -8,8 +8,7 @@ import { CredentialModule } from './credential/credential.module';
 import { CityShowModule } from './city-show/city-show.module';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarModule } from './navbar/navbar.module';
 import { CardComponent } from './card/card.component';
 import { CityIndexComponent } from './city-index/city-index.component';
 import { CityShowComponent } from './city-show/city-show.component';
@@ -18,8 +17,6 @@ import { CredentialComponent } from './credential/credential.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SidebarComponent,
     CardComponent,
     CityIndexComponent,
     CityShowComponent,
@@ -28,6 +25,7 @@ import { CredentialComponent } from './credential/credential.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NavbarModule,
     CityAdditionModule,
     CredentialModule,
     CityShowModule,

@@ -1,35 +1,72 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
   padding: 0 20px;
-  position: relative;
 
-  .hamburger {
-    padding: 0;
-  }
-
-  .brand {
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
+    position: relative;
 
-    &__name {
-      display: inline-block;
-      margin: 0;
+    .hamburger {
+      padding: 0;
+      z-index: 51;
     }
 
-    &__logo {
-      padding: 10px;
+    .brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__name {
+        display: inline-block;
+        margin: 0;
+      }
+
+      &__logo {
+        padding: 10px;
+      }
+    }
+
+    .day {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   }
-
-  .day {
+  .sidebar {
+    flex-direction: column;
+    z-index: 50;
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
+    left: 0;
+    width: 25vw;
+    height: 100vh;
+    background-color: orange;
+
+    &--present {
+      position: absolute;
+      display: flex;
+      transition: 0.4s;
+      transition-property: width;
+
+      &::before {
+        position: absolute;
+        background-color: #000000;
+        z-index: 49;
+        opacity: 0.5;
+        content: '';
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+
+    &--hidden {
+      display: none;
+      width: 0;
+      transition: 0.4s;
+      transition-property: width;
+    }
   }
 }
 

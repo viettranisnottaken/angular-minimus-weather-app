@@ -1,0 +1,50 @@
+:host {
+  // z-index: 50;
+
+  .sidebar__header {
+    min-height: 200px;
+    background: linear-gradient(to right, #00ff9b, #5f84fb);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+
+    .user-profile {
+      width: 100%;
+      display: flex;
+
+      &__pic {
+        min-width: 25%;
+        background-color: black;
+      }
+
+      &__email {
+        min-width: 75%;
+        background-color: black;
+      }
+    }
+  }
+
+  .sidebar__options {
+    z-index: 50;
+    color: #5f84fb;
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding: 30px 20px;
+
+        a {
+          color: #5f84fb;
+        }
+      }
+    }
+  }
+
+  .router-link-active {
+    border-bottom: 1px solid #5f84fb;
+    color: black;
+  }
+}

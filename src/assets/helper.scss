@@ -23,6 +23,12 @@
   }
 }
 
-.m-1 {
-  margin: 10px;
+.d-none {
+  display: none;
+}
+
+.m {
+  &--auto {
+    margin: auto;
+  }
 }

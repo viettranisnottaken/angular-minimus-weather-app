@@ -8,9 +8,8 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
-    })
-    .compileComponents();
+      declarations: [SidebarComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +21,8 @@ describe('SidebarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  xdescribe('#onOpenSidebar', () => {});
+
+  xdescribe('click on hamburger', () => {});
 });

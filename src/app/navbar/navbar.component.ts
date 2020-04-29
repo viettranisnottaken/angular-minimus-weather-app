@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   day = 'today';
   brandName = 'Minimus';
+  sidebarClasses = 'sidebar--hidden';
 
   @Output() sidebarIsHidden = new EventEmitter<boolean>();
 

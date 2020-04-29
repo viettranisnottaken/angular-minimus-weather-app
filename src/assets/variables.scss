@@ -16,6 +16,12 @@ $breakpoints: (
   xl: 1200px,
 );
 
+$widths: (
+  sidebar: (
+    md: 50px,
+  ),
+);
+
 $sm: map-get($breakpoints, 'sm');
 $md: map-get($breakpoints, 'md');
 $lg: map-get($breakpoints, 'lg');

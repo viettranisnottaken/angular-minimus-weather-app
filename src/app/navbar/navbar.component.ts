@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  @Input() hamburgerSidebarActivated = true;
+
   day = 'today';
   brandName = 'Minimus';
+
+  @Output() sidebarIsHidden = new EventEmitter<boolean>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onHamburgerClick() {
+    this.hamburgerSidebarActivated = !this.hamburgerSidebarActivated;
+    this.sidebarIsHidden.emit(this.hamburgerSidebarActivated);
+  }
 }

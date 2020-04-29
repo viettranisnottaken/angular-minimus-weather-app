@@ -1,7 +1,12 @@
 $colors: (
-  primary: #00ff9b,
-  secondary: #003eff,
-  primary-dark: #432c85,
+  default: (
+    primary: #00ff9b,
+    secondary: #003eff,
+    primaryLink: #495cfc,
+  ),
+  dark: (
+    primary: #432c85,
+  ),
 );
 
 $breakpoints: (
@@ -15,3 +20,21 @@ $sm: map-get($breakpoints, 'sm');
 $md: map-get($breakpoints, 'md');
 $lg: map-get($breakpoints, 'lg');
 $xl: map-get($breakpoints, 'xl');
+
+$primary-color: map-get(
+  $map:
+    map-get(
+      $map: $colors,
+      $key: default,
+    ),
+  $key: primary,
+);
+
+$primary-link-color: map-get(
+  $map:
+    map-get(
+      $map: $colors,
+      $key: default,
+    ),
+  $key: primaryLink,
+);

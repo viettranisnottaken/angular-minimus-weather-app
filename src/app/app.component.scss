@@ -1,0 +1,51 @@
+@import '../assets/mixins.scss';
+@import '../assets/variables.scss';
+@import '../assets/helper.scss';
+
+.nav {
+  position: relative;
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    width: 30vw;
+    height: 100vh;
+    z-index: 50;
+    flex-direction: column;
+
+    @include respond-below('md') {
+      width: 80vw;
+    }
+
+    &.present {
+      left: 0;
+      animation: sidebarSlideIn 0.4s;
+    }
+
+    &.hidden {
+      left: -30vw;
+      animation: sidebarSlideOut 0.4s;
+    }
+  }
+
+  .backdrop {
+    content: '';
+    background-color: black;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 49;
+
+    &.present {
+      opacity: 0.3;
+      animation: backdropFadeIn 0.4s;
+    }
+
+    &.hidden {
+      animation: backdropFadeOut 0.4s;
+    }
+  }
+}

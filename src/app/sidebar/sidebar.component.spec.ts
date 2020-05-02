@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SidebarComponent } from './sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -9,6 +10,7 @@ describe('SidebarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [SidebarComponent],
+      imports: [HttpClientModule],
     }).compileComponents();
   }));
 
@@ -22,7 +24,20 @@ describe('SidebarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xdescribe('#onOpenSidebar', () => {});
+  describe('public interface', () => {
+    describe('#triggerLinkState', () => {
+      beforeEach(() => {
+        component.isActiveClassActive = false;
+        component.triggerLinkState();
+      });
 
-  xdescribe('click on hamburger', () => {});
+      it('should change isActiveClassActive from false to true', () => {
+        expect(component.isActiveClassActive).toBeTrue();
+      });
+
+      it("should change activeClass from '' to 'active'", () => {
+        expect(component.activeClass).toBe('active');
+      });
+    });
+  });
 });

@@ -1,1 +1,46 @@
-<p>sidebar works!</p>
+<div class="sidebar-header">
+  <div class="banner">
+    <h2>Welcome</h2>
+  </div>
+  <div class="user-profile">
+    <div class="user-profile__picture">
+      <img [src]="profilePicture" alt="" />
+    </div>
+    <div class="user-profile__info">
+      <p class="user-profile__info__content">tranxuanviet@gmail.com</p>
+    </div>
+  </div>
+</div>
+<div class="sidebar-body">
+  <div class="links">
+    <ul class="links__list">
+      <li class="links__list__item">
+        <a
+          [routerLink]="['/']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+          >Home</a
+        >
+      </li>
+      <li class="links__list__item">
+        <a
+          [routerLink]="['/']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+          >Add City</a
+        >
+      </li>
+      <li class="links__list__item">
+        <a
+          [routerLink]="['/']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+          >Log Out</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <small>This is mine now, fight me.</small>
+  </div>
+</div>

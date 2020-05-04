@@ -1,1 +1,14 @@
-<app-navbar></app-navbar>
+<nav class="nav">
+  <app-navbar
+    (sidebarIsHidden)="onSidebarTrigger($event)"
+    [hamburgerSidebarActivated]="sidebarIsHidden"
+  ></app-navbar>
+  <app-sidebar class="sidebar" [ngClass]="sidebarClasses"> </app-sidebar>
+  <div
+    class="backdrop"
+    [ngClass]="sidebarClasses"
+    (click)="onSidebarTrigger(!sidebarIsHidden)"
+  ></div>
+</nav>
+
+<router-outlet></router-outlet>

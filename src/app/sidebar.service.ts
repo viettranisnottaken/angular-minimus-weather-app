@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+import { EnvService } from './env.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SidebarService {
-  profilePicUrl = 'https://picsum.photos';
+  constructor(private http: HttpClient, private env: EnvService) {}
 
-  constructor(private http: HttpClient) {}
-
-  getProfilePicture(): Observable<any> {
-    return this.http.get(this.profilePicUrl.concat('/200'), {
+  getProfilePicture(): Observable<Blob> {
+    return this.http.get(this.env.envProps.profilePicUrl.concat('/200'), {
       responseType: 'blob',
     });
   }

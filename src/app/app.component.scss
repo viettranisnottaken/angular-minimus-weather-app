@@ -12,23 +12,27 @@
     height: 100vh;
     z-index: 50;
     flex-direction: column;
+    display: none;
 
     @include respond-below('md') {
       width: 80vw;
     }
 
     &.present {
+      display: flex;
       left: 0;
       animation: sidebarSlideIn 0.4s;
     }
 
     &.hidden {
+      display: flex;
       left: -30vw;
       animation: sidebarSlideOut 0.4s;
     }
   }
 
   .backdrop {
+    display: none;
     content: '';
     background-color: black;
     opacity: 0;
@@ -40,12 +44,15 @@
     z-index: 49;
 
     &.present {
+      display: block;
       opacity: 0.3;
       animation: backdropFadeIn 0.4s;
     }
 
     &.hidden {
+      display: block;
       animation: backdropFadeOut 0.4s;
+      left: -100vw;
     }
   }
 }

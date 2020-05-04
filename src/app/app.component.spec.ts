@@ -51,16 +51,6 @@ describe('AppComponent', () => {
         component.onSidebarTrigger(true);
         expect(component.sidebarClasses).toBe('hidden d-flex');
       });
-
-      it("should alter sidebarClasses to 'hidden d-none' after 0.4 sec", () => {
-        jasmine.clock().install();
-
-        component.onSidebarTrigger(true);
-        jasmine.clock().tick(400);
-        expect(component.sidebarClasses).toBe('hidden d-none');
-
-        jasmine.clock().uninstall();
-      });
     });
 
     describe('#onEscKeyUp', () => {

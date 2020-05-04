@@ -3,12 +3,7 @@
     (sidebarIsHidden)="onSidebarTrigger($event)"
     [hamburgerSidebarActivated]="sidebarIsHidden"
   ></app-navbar>
-  <app-sidebar
-    class="sidebar"
-    [ngClass]="sidebarClasses"
-    (keyup)="onEscKeyUp($event)"
-  >
-  </app-sidebar>
+  <app-sidebar class="sidebar" [ngClass]="sidebarClasses"> </app-sidebar>
   <div
     class="backdrop"
     [ngClass]="sidebarClasses"

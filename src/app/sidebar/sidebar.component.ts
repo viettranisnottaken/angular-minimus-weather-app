@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  private getImageFromServer() {
+  private getImageFromServer(): void {
     this.isImageLoading = true;
     this.sidebarService.getProfilePicture().subscribe(
       (data) => {
@@ -37,7 +37,6 @@ export class SidebarComponent implements OnInit {
       },
       (error) => {
         this.isImageLoading = false;
-        console.log(error);
       }
     );
   }

@@ -7,7 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   _sidebarIsHidden = true;
-  _sidebarClasses = 'hidden d-none';
+  _sidebarClasses = '';
 
   @HostListener('document:keyup.escape', ['true'])
   onEscKeyUp(event: boolean) {
@@ -21,10 +21,9 @@ export class AppComponent {
   onSidebarTrigger(event: boolean) {
     this.sidebarIsHidden = event;
     if (this.sidebarIsHidden) {
-      this.sidebarClasses = 'hidden d-flex';
-      setTimeout(() => (this.sidebarClasses = 'hidden d-none'), 400);
+      this.sidebarClasses = 'hidden';
     } else {
-      this.sidebarClasses = 'present d-flex';
+      this.sidebarClasses = 'present';
     }
   }
 

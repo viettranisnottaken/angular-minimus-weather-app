@@ -35,6 +35,14 @@
   margin: 10px;
 }
 
+.container {
+  margin: auto;
+  padding: 2vw;
+  max-width: 90vw;
+  width: 80vw;
+  height: 90vh;
+}
+
 @-webkit-keyframes backdropFadeIn {
   from {
     opacity: 0;

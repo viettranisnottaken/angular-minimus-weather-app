@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { SidebarService } from '../sidebar.service';
 
@@ -6,17 +6,23 @@ import { SidebarService } from '../sidebar.service';
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  providers: [SidebarService],
 })
 export class SidebarComponent implements OnInit {
   profilePicture: any;
-  isImageLoading: boolean;
   _activeClass = '';
   _isActiveClassActive = false;
+
+  @Output() linkActivation = new EventEmitter();
 
   constructor(private sidebarService: SidebarService) {}
 
   ngOnInit(): void {
-    this.getImageFromServer();
+    this.sidebarService.getImageFromServer(
+      this.sidebarService.createimageFromBlob
+    );
+
+    this.profilePicture = this.sidebarService.profilePicture;
   }
 
   triggerLinkState() {
@@ -28,32 +34,10 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  private getImageFromServer(): void {
-    this.isImageLoading = true;
-    this.sidebarService.getProfilePicture().subscribe(
-      (data) => {
-        this.createimageFromBlob(data);
-        this.isImageLoading = false;
-      },
-      (error) => {
-        this.isImageLoading = false;
-      }
-    );
-  }
+  onLinkActivation(event: boolean) {
+    console.log(event);
 
-  private createimageFromBlob(image: Blob) {
-    const reader = new FileReader();
-    reader.addEventListener(
-      'load',
-      () => {
-        this.profilePicture = reader.result;
-      },
-      false
-    );
-
-    if (image) {
-      reader.readAsDataURL(image);
-    }
+    this.linkActivation.emit(event);
   }
 
   public get activeClass(): string {

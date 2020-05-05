@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { CityIndexComponent } from './city-index/city-index.component';
 import { CityShowComponent } from './city-show/city-show.component';
 import { CityAdditionComponent } from './city-addition/city-addition.component';

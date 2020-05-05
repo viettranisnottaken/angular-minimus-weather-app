@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CredentialRoutingModule } from './credential-routing.module';
 
 @NgModule({
   declarations: [LoginComponent, SignupComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, CredentialRoutingModule],
 })
 export class CredentialModule {}

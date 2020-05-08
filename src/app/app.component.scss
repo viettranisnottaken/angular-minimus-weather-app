@@ -6,8 +6,9 @@
 .main-container {
   margin: 0;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-image: linear-gradient(to top, #5ee7df 0, #66a6ff 100%);
+  overflow: auto;
 
   .nav {
     position: relative;
@@ -36,13 +37,35 @@
       &.present {
         display: flex;
         left: 0;
-        animation: sidebarSlideIn 0.4s;
+
+        @include slideInAnimation(-30vw, 0, 0.4s);
+
+        @include respond-below('lg') {
+          @include slideInAnimation(-50vw, 0, 0.4s);
+        }
+
+        @include respond-below('md') {
+          @include slideInAnimation(-80vw, 0, 0.4s);
+        }
       }
 
       &.hidden {
         display: flex;
         left: -30vw;
-        animation: sidebarSlideOut 0.4s;
+
+        @include slideOutAnimation(0, -30vw, 0.4s);
+
+        @include respond-below('lg') {
+          left: -50vw;
+
+          @include slideOutAnimation(0, -50vw, 0.4s);
+        }
+
+        @include respond-below('md') {
+          left: -80vw;
+
+          @include slideOutAnimation(0, -80vw, 0.4s);
+        }
       }
     }
 
@@ -70,5 +93,9 @@
         left: -100vw;
       }
     }
+  }
+
+  &.sidebar-opened {
+    overflow: hidden;
   }
 }

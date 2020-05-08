@@ -36,11 +36,10 @@
 }
 
 .container {
-  margin: 0;
-  padding: 2vw;
-  width: 100vw;
-  height: 80vh;
-  overflow-y: scroll;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: calc(96vw - 1em);
+  min-height: 80vh;
 }
 
 @-webkit-keyframes backdropFadeIn {
@@ -76,44 +75,6 @@
   }
   to {
     opacity: 0;
-  }
-}
-
-@keyframes sidebarSlideIn {
-  from {
-    left: -30vw;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@-webkit-keyframes sidebarSlideIn {
-  from {
-    left: -30vw;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes sidebarSlideOut {
-  from {
-    left: 0;
-    display: flex;
-  }
-  to {
-    left: -30vw;
-    display: none;
-  }
-}
-
-@-webkit-keyframes sidebarSlideOut {
-  from {
-    left: 0;
-  }
-  to {
-    left: -30vw;
   }
 }
 

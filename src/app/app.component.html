@@ -1,4 +1,4 @@
-<main class="main-container">
+<main class="main-container" [ngClass]="{ 'sidebar-opened': !sidebarIsHidden }">
   <nav class="nav" *ngIf="isLoggedIn">
     <app-navbar
       (sidebarIsHidden)="onSidebarTrigger($event)"

@@ -35,7 +35,6 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.userService.signup(this.signupFormValue);
-    console.log(USERS);
   }
 
   private get signupFormValue(): User {

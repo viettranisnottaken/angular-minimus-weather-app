@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { PictureService } from './picture.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 describe('PictureService', () => {
   let service: PictureService;
@@ -9,6 +10,7 @@ describe('PictureService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
+      providers: [PictureService],
     });
     service = TestBed.inject(PictureService);
   });
@@ -17,9 +19,15 @@ describe('PictureService', () => {
     expect(service).toBeTruthy();
   });
 
-  xdescribe('public interface', () => {
-    describe('#getProfilePicture', () => {
-      it('should return blob', (done: DoneFn) => {});
+  describe('public interface', () => {
+    describe('#getImageFromServer', () => {
+      it('should return an observable', (done: DoneFn) => {
+        const returnedObservable = service.getImageFromServer('/200');
+
+        expect(returnedObservable).toBeInstanceOf(Observable);
+
+        done();
+      });
     });
   });
 });

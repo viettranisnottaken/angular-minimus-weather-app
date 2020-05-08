@@ -47,9 +47,9 @@ describe('AppComponent', () => {
         expect(component.sidebarIsHidden).toBeTrue();
       });
 
-      it("should alter sidebarClasses to 'hidden d-flex' ", () => {
+      it("should alter sidebarClasses to 'hidden' ", () => {
         component.onSidebarTrigger(true);
-        expect(component.sidebarClasses).toBe('hidden d-flex');
+        expect(component.sidebarClasses).toBe('hidden');
       });
     });
 

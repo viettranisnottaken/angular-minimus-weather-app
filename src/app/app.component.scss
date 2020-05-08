@@ -5,7 +5,7 @@
 
 .main-container {
   margin: 0;
-  width: calc(100vw - 1em);
+  width: 100vw;
   min-height: 100vh;
   background-image: linear-gradient(to top, #5ee7df 0, #66a6ff 100%);
 
@@ -24,6 +24,10 @@
       z-index: 50;
       flex-direction: column;
       display: none;
+
+      @include respond-below('lg') {
+        width: 50vw;
+      }
 
       @include respond-below('md') {
         width: 80vw;

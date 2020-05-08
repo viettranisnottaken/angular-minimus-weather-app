@@ -9,6 +9,7 @@ export class AppComponent {
   _sidebarIsHidden = true;
   _sidebarClasses = '';
   isLoggedIn = true;
+  body = document.querySelector('body');
 
   @HostListener('document:keyup.escape', ['true'])
   onEscKeyUp(event: boolean) {
@@ -26,6 +27,8 @@ export class AppComponent {
     } else {
       this.sidebarClasses = 'present';
     }
+
+    this.body.classList.toggle('sidebar-opened');
   }
 
   public get sidebarIsHidden(): boolean {

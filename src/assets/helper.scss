@@ -36,11 +36,11 @@
 }
 
 .container {
-  margin: auto;
+  margin: 0;
   padding: 2vw;
-  max-width: 90vw;
-  width: 80vw;
-  height: 90vh;
+  width: 100vw;
+  height: 80vh;
+  overflow-y: scroll;
 }
 
 @-webkit-keyframes backdropFadeIn {
@@ -114,6 +114,25 @@
   }
   to {
     left: -30vw;
+  }
+}
+
+@keyframes welcomeTextSlideIn {
+  from {
+    left: 20%;
+  }
+  to {
+    left: 45%;
+  }
+}
+
+@keyframes divAppearing {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 

@@ -1,28 +1,25 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { SidebarService } from '../sidebar.service';
+import { PictureService } from '../picture.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  providers: [SidebarService],
+  providers: [PictureService],
 })
 export class SidebarComponent implements OnInit {
-  profilePicture: any;
+  profilePicture$: Observable<string>;
   _activeClass = '';
   _isActiveClassActive = false;
 
   @Output() linkActivation = new EventEmitter();
 
-  constructor(private sidebarService: SidebarService) {}
+  constructor(private pictureService: PictureService) {}
 
   ngOnInit(): void {
-    this.sidebarService.getImageFromServer(
-      this.sidebarService.createimageFromBlob
-    );
-
-    this.profilePicture = this.sidebarService.profilePicture;
+    this.getImageFromServer();
   }
 
   triggerLinkState() {
@@ -35,9 +32,11 @@ export class SidebarComponent implements OnInit {
   }
 
   onLinkActivation(event: boolean) {
-    console.log(event);
-
     this.linkActivation.emit(event);
+  }
+
+  private getImageFromServer() {
+    this.profilePicture$ = this.pictureService.getImageFromServer('/200');
   }
 
   public get activeClass(): string {

@@ -21,9 +21,9 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true,
       thresholds: {
         statements: 95,
-        lines: 95,
-        branches: 95,
-        functions: 95,
+        lines: 80,
+        branches: 80,
+        functions: 90,
       },
     },
     reporters: ['progress', 'kjhtml'],

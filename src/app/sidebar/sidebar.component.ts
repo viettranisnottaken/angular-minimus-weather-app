@@ -1,19 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { SidebarService } from '../sidebar.service';
+import { PictureService } from '../picture.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
+  providers: [PictureService],
 })
 export class SidebarComponent implements OnInit {
-  profilePicture: any;
-  isImageLoading: boolean;
+  profilePicture$: Observable<string>;
   _activeClass = '';
   _isActiveClassActive = false;
 
-  constructor(private sidebarService: SidebarService) {}
+  @Output() linkActivation = new EventEmitter();
+
+  constructor(private pictureService: PictureService) {}
 
   ngOnInit(): void {
     this.getImageFromServer();
@@ -28,32 +31,12 @@ export class SidebarComponent implements OnInit {
     }
   }
 
-  private getImageFromServer(): void {
-    this.isImageLoading = true;
-    this.sidebarService.getProfilePicture().subscribe(
-      (data) => {
-        this.createimageFromBlob(data);
-        this.isImageLoading = false;
-      },
-      (error) => {
-        this.isImageLoading = false;
-      }
-    );
+  onLinkActivation(event: boolean) {
+    this.linkActivation.emit(event);
   }
 
-  private createimageFromBlob(image: Blob) {
-    const reader = new FileReader();
-    reader.addEventListener(
-      'load',
-      () => {
-        this.profilePicture = reader.result;
-      },
-      false
-    );
-
-    if (image) {
-      reader.readAsDataURL(image);
-    }
+  private getImageFromServer() {
+    this.profilePicture$ = this.pictureService.getImageFromServer('/200');
   }
 
   public get activeClass(): string {

@@ -8,6 +8,7 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
   _sidebarIsHidden = true;
   _sidebarClasses = '';
+  isLoggedIn = true;
 
   @HostListener('document:keyup.escape', ['true'])
   onEscKeyUp(event: boolean) {

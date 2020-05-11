@@ -4,7 +4,7 @@
   </div>
   <div class="user-profile">
     <div class="user-profile__picture">
-      <img [src]="profilePicture" alt="" />
+      <img [src]="profilePicture$ | async" alt="" />
     </div>
     <div class="user-profile__info">
       <p class="user-profile__info__content">tranxuanviet@gmail.com</p>
@@ -19,6 +19,7 @@
           [routerLink]="['/']"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="active"
+          (click)="onLinkActivation(true)"
           >Home</a
         >
       </li>
@@ -27,6 +28,7 @@
           [routerLink]="['/']"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="active"
+          (click)="onLinkActivation(true)"
           >Add City</a
         >
       </li>
@@ -35,6 +37,7 @@
           [routerLink]="['/']"
           [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="active"
+          (click)="onLinkActivation(true)"
           >Log Out</a
         >
       </li>

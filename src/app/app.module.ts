@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 import { CityAdditionModule } from './city-addition/city-addition.module';
 import { CredentialModule } from './credential/credential.module';
@@ -29,6 +30,7 @@ import { CredentialComponent } from './credential/credential.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     CityAdditionModule,
     CredentialModule,

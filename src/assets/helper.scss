@@ -35,6 +35,13 @@
   margin: 10px;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 20px 0;
+  width: calc(96vw - 1em);
+  min-height: 80vh;
+}
+
 @-webkit-keyframes backdropFadeIn {
   from {
     opacity: 0;
@@ -71,41 +78,22 @@
   }
 }
 
-@keyframes sidebarSlideIn {
+@keyframes welcomeTextSlideIn {
   from {
-    left: -30vw;
+    left: 20%;
   }
   to {
-    left: 0;
+    left: 45%;
   }
 }
 
-@-webkit-keyframes sidebarSlideIn {
+@keyframes divAppearing {
   from {
-    left: -30vw;
+    opacity: 0;
   }
-  to {
-    left: 0;
-  }
-}
 
-@keyframes sidebarSlideOut {
-  from {
-    left: 0;
-    display: flex;
-  }
   to {
-    left: -30vw;
-    display: none;
-  }
-}
-
-@-webkit-keyframes sidebarSlideOut {
-  from {
-    left: 0;
-  }
-  to {
-    left: -30vw;
+    opacity: 1;
   }
 }
 

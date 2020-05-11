@@ -63,15 +63,18 @@
       list-style-type: none;
 
       &__item {
-        padding: 20px 0;
+        padding: 10px 0;
 
         a {
           text-decoration: none;
           color: #000000;
+          padding: 20px 0;
+          display: inline-block;
+          width: 100%;
         }
 
-        &.active {
-          border-bottom: 2px solid $primary-link-color;
+        & .active {
+          border-bottom: 1px solid $primary-link-color;
 
           a {
             color: $primary-link-color;

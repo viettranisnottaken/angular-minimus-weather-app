@@ -38,3 +38,12 @@ $primary-link-color: map-get(
     ),
   $key: primaryLink,
 );
+
+$secondary-color: map-get(
+  $map:
+    map-get(
+      $map: $colors,
+      $key: default,
+    ),
+  $key: secondary,
+);

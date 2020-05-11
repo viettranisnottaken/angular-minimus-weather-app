@@ -1,3 +1,29 @@
+@mixin slideInAnimation($from, $to, $duration) {
+  @keyframes slideIn {
+    from {
+      left: $from;
+    }
+    to {
+      left: $to;
+    }
+  }
+
+  animation: slideIn $duration;
+}
+
+@mixin slideOutAnimation($from, $to, $duration) {
+  @keyframes slideOut {
+    from {
+      left: $from;
+    }
+    to {
+      left: $to;
+    }
+  }
+
+  animation: slideOut $duration;
+}
+
 @mixin respond-above($breakpoint) {
   // If the breakpoint exists in the map.
   @if map-has-key($breakpoints, $breakpoint) {

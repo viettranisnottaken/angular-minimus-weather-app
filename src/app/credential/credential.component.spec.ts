@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { CredentialComponent } from './credential.component';
+// import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('CredentialComponent', () => {
   let component: CredentialComponent;
@@ -8,6 +11,7 @@ describe('CredentialComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [CredentialComponent],
     }).compileComponents();
   }));
